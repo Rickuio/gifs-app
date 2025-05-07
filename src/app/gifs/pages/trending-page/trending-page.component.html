@@ -1,3 +1,4 @@
 <section class="py-5">
-    <gif-list [gifs]="images" />    
+    <!-- <gif-list [gifs]="images()" /> -->
+    <gif-list [gifs]="gifService.trendingGifs()" />
 </section>
