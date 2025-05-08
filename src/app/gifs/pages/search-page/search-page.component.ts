@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { GifListComponent } from "../../components/gif-list/gif-list.component";
 import { GifService } from '../../services/gifs.service';
 import { Gif } from '../../interfaces/gif.interface';
@@ -15,7 +15,7 @@ export default class SearchPageComponent {
 
   onSearch(query: string) {
     this.gifService.searchGifs(query).subscribe((resp)=> {
-      //console.log({resp});
+      console.log({resp});
       this.gifs.set(resp)
     });
   }
